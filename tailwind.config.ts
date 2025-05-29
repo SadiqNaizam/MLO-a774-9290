@@ -64,9 +64,12 @@ export default {
 				}
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+        // Existing values are kept as --radius: 0.5rem results in
+        // theme.borderRadius.md being 0.375rem (Tailwind's default 'md'),
+        // which matches PRD's 'effects.borderRadius.default: "rounded-md"'.
+				lg: 'var(--radius)', // results in 0.5rem
+				md: 'calc(var(--radius) - 2px)', // results in 0.375rem
+				sm: 'calc(var(--radius) - 4px)' // results in 0.25rem
 			},
 			keyframes: {
 				'accordion-down': {
